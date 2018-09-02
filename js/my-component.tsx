@@ -26,10 +26,7 @@ enum CanvasMode {
 interface State {
   showModal: boolean;
   canvasMode: CanvasMode;
-  canvasEl?: HTMLElement;
 }
-
-const CANVAS_ID = "canvasEl";
 
 class MyComponent extends React.Component<Props, State> {
   private fullscreenDiv?: HTMLDivElement;
@@ -43,8 +40,6 @@ class MyComponent extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    const canvasEl = document.getElementById(CANVAS_ID)!;
-    this.setState({ canvasEl });
     this.registerFscreenCallbacks();
   }
 

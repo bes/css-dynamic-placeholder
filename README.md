@@ -13,3 +13,5 @@ around using the above mentioned "render loop" technique.
 
 A better way could be native CSS support for "virtual reparenting",
 or "same-as" positioning/sizing, that unfortunately does not exist.
+
+There is a demo at [bes.github.io/css-dynamic-placeholder](https://bes.github.io/css-dynamic-placeholder)

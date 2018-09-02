@@ -45,27 +45,12 @@ class MyComponent extends React.Component<Props, State> {
   componentDidMount() {
     const canvasEl = document.getElementById(CANVAS_ID)!;
     this.setState({ canvasEl });
-    // this.startUpdateElementPositionLoop();
     this.registerFscreenCallbacks();
   }
 
   componentWillUnmount() {
     this.unregisterFscreenCallbacks();
   }
-
-  // tslint:disable-next-line:no-unused
-  // componentDidUpdate(prevProps: Props, prevState: State) {
-  //     if (this.state.targetId !== prevState.targetId) {
-  //         this.updateTarget();
-  //     }
-  // }
-
-  // private updateTarget = () => {
-  //     const target = document.getElementById(this.state.targetId);
-  //     if (target) {
-  //         this.setState({ target });
-  //     }
-  // };
 
   private showModal = () => {
     this.setState({
@@ -80,33 +65,6 @@ class MyComponent extends React.Component<Props, State> {
       canvasMode: CanvasMode.EMBED
     });
   };
-
-  // private mountSource = (src: HTMLDivElement) => {
-  //     this.src = src;
-  // };
-
-  // private startUpdateElementPositionLoop = () => {
-  //     if (!this.renderActive) {
-  //         this.renderActive = true;
-  //         this.updateElementPositionLoop();
-  //     }
-  // };
-
-  // private stopUpdateElementPositionLoop = () => {
-  //     if (this.renderActive) {
-  //         this.renderActive = false;
-  //         if (this.animationFrameId) {
-  //             window.cancelAnimationFrame(this.animationFrameId);
-  //         }
-  //     }
-  // };
-
-  // private updateElementPositionLoop = () => {
-  //     this.fixRenderElementPosition();
-  //     if (this.renderActive) {
-  //         this.animationFrameId = window.requestAnimationFrame(this.updateElementPositionLoop);
-  //     }
-  // };
 
   private enterFullscreen = () => {
     this.setState(
@@ -132,49 +90,6 @@ class MyComponent extends React.Component<Props, State> {
   private unregisterFscreenCallbacks = () => {
     fscreen.removeEventListener("fullscreenchange", this.onFullScreenChange);
   };
-
-  // private fixRenderElementPosition = () => {
-  //     const { target, targetId } = this.state;
-  //     const { src } = this;
-
-  //     if (target && src) {
-  //         const targetPos = target.getBoundingClientRect();
-  //         switch (targetId) {
-  //             case "target1": {
-  //                 const top = totalOffsetTop(target);
-  //                 const left = totalOffsetLeft(target);
-  //                 src.style.top = `${top}px`;
-  //                 src.style.left = `${left}px`;
-  //                 src.style.width = `${targetPos.width}px`;
-  //                 src.style.height = `${targetPos.height}px`;
-  //                 break;
-  //             }
-  //             case "target2": {
-  //                 const sourcePos = src.getBoundingClientRect();
-  //                 if (targetPos.top !== sourcePos.top) {
-  //                     src.style.top = `${targetPos.top}px`;
-  //                 }
-  //                 if (targetPos.left !== sourcePos.left) {
-  //                     src.style.left = `${targetPos.left}px`;
-  //                 }
-  //                 if (targetPos.width !== sourcePos.width) {
-  //                     src.style.width = `${targetPos.width}px`;
-  //                 }
-  //                 if (targetPos.height !== sourcePos.height) {
-  //                     src.style.height = `${targetPos.height}px`;
-  //                 }
-  //                 break;
-  //             }
-  //             case "fullscreen": {
-  //                 src.style.top = "0px";
-  //                 src.style.left = "0px";
-  //                 src.style.width = `${targetPos.width}px`;
-  //                 src.style.height = `${targetPos.height}px`;
-  //                 break;
-  //             }
-  //         }
-  //     }
-  // };
 
   private onFullScreenChange = () => {
     const isFullScreen = fscreen.fullscreenElement !== null;

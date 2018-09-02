@@ -1,0 +1,33 @@
+.surfaceFullScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  // Override video player surface size in full screen mode
+  .surface {
+    height: 100vh;
+  }
+}
+
+.fullScreenWrap {
+  &:fullscreen {
+    .surfaceFullScreen()
+  }
+  // Not allowed to combine vendor specific selectors :C
+  &:-webkit-full-screen {
+    .surfaceFullScreen()
+  }
+  // Not allowed to combine vendor specific selectors :C
+  &:-moz-full-screen {
+    .surfaceFullScreen()
+  }
+}
+
+.sourceCanvas {
+  color: white;
+  background: blue;
+}

@@ -1,0 +1,21 @@
+{
+  "presets": [
+    // https://babeljs.io/docs/en/babel-preset-stage-3/
+    "stage-3",
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": [
+          "last 2 versions",
+          "safari >= 9"
+        ]
+      }
+    ],
+    "react"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "syntax-dynamic-import",
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "jsx": "react",
+    "allowJs": true,
+    "strict": true,
+    "noEmitOnError": true,
+    "plugins": [],
+    "baseUrl": "./",
+    "lib": [
+      "es2017", // Object.entries support
+      "dom"
+    ],
+    "paths": {
+      "lib-js/*": ["js/*"]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

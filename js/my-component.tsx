@@ -114,7 +114,7 @@ class MyComponent extends React.Component<Props, State> {
                 id="target1"
                 style={{
                   width: "100%",
-                  height: "20vh",
+                  height: "400px",
                   background: "red",
                   position: "relative"
                 }}
@@ -132,7 +132,9 @@ class MyComponent extends React.Component<Props, State> {
                         bottom: 0
                       }}
                     >
-                      I'm a "Canvas"
+                        <video width="320" height="240" controls>
+                            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4"/>
+                        </video>
                     </div>
                   </ElementCache>
                 ) : null}
@@ -189,7 +191,9 @@ class MyComponent extends React.Component<Props, State> {
                       bottom: 0
                     }}
                   >
-                    I'm a "Canvas"
+                      <video width="320" height="240" controls>
+                          <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4"/>
+                      </video>
                   </div>
                 </ElementCache>
               ) : null}
@@ -224,7 +228,9 @@ class MyComponent extends React.Component<Props, State> {
                   bottom: 0
                 }}
               >
-                I'm a "Canvas"
+                  <video width="320" height="240" controls>
+                    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4"/>
+                  </video>
               </div>
             </ElementCache>
           ) : null}
